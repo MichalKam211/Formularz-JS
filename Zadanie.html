@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz rejestracji na wydarzenie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <label for="imie">Imię:</label>
+        <input type="text" id="imie" name="imie" placeholder="Wpisz swoje imię"><br>
+        <label for="nazwisko">Nazwisko:</label>
+        <input type="text" id="nazwisko" name="nazwisko" placeholder="Wpisz swoje nazwisko"><br>
+        <label for="wydarzenie">Wybierz wydarzenie</label>
+        <select id="wydarzenie" name="wydarzenie">
+            <option value="Konkurs Matematyczny">Konkurs Matematyczny</option>
+            <option value="Zawody Sportowe">Zawody Sportowe</option>
+            <option value="Spotkanie z Prezydentem">Spotkanie z Prezydentem</option>
+        </select><br>
+        <input type="radio" id="Uczeń" name="rola" value="Uczeń">
+        <label for="Uczeń">Uczeń</label>
+        <input type="radio" id="Nauczyciel" name="rola" value="Nauczyciel">
+        <label for="Nauczyciel">Nauczyciel</label>
+        <input type="radio" id="Gość" name="rola" value="Gość">
+        <label for="Gość">Gość</label><br>
+        <input type="checkbox" id="checkbox1" name="checkbox1">
+        <label for="checkbox1">Wyrażam zgodę na przetwarzanie danych osobowych</label><br>
+        <button type="button" onclick="wyswietlPodsumowanie()">Zarejestruj</button>
+        <p id="wynik"></p>
+    </form>
+    <script>
+        function wyswietlPodsumowanie() {
+            const checkbox1 = document.getElementById("checkbox1");
+            const checkbox2 = document.getElementById("checkbox2");
+            let zgoda = "";
+            if (checkbox1.checked) {
+                zgoda += "Wyrażono zgode na przetwarzanie danych osobowych";
+            }
+
+            const selectElement = document.getElementById("wydarzenie").value;
+            const imie = document.getElementById("imie").value;
+            const nazwisko = document.getElementById("nazwisko").value;
+
+            const radios = document.getElementsByName("rola");
+            let rola = "";
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    rola = radios[i].value;
+                    break;
+                }
+            }
+
+            let wynikTekst = `Imię: ${imie}
+Nazwisko: ${nazwisko}
+Wybrane wydarzenie: ${selectElement}
+Uczestnik: ${rola}
+${zgoda}`;
+
+            document.getElementById("wynik").innerText = wynikTekst;
+        }
+    </script>
+</body>
+</html>
