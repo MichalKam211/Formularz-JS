@@ -1,3 +1,22 @@
 * {
+    background-color: aquamarine;
+    padding: 2px;
+    font-size: 20px;
+    line-height: 25px;
+}
+#wynik {
+    border: 1px solid black;
+    width: 34%;
+    text-align: center;
     background-color: lightblue;
+    box-shadow: 2px 2px 2px 2px gray;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+button {
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 1px 1px 1px 1px black;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
