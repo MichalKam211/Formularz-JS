@@ -12,6 +12,7 @@
     box-shadow: 2px 2px 2px 2px gray;
     padding-top: 15px;
     padding-bottom: 15px;
+    border-radius: 5px;
 }
 button {
     padding: 10px;

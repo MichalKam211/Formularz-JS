@@ -37,11 +37,11 @@
             if (checkbox1.checked) {
                 zgoda += "Wyrażono zgode na przetwarzanie danych osobowych";
             }
-
             const selectElement = document.getElementById("wydarzenie").value;
-            const imie = document.getElementById("imie").value;
-            const nazwisko = document.getElementById("nazwisko").value;
-
+            let imie = document.getElementById("imie").value;
+            if (imie === "") {imie = "Nie wprowadzono imienia"} 
+            let nazwisko = document.getElementById("nazwisko").value;
+            if (nazwisko === "") {nazwisko = "Nie wprowadzono nazwiska"} 
             const radios = document.getElementsByName("rola");
             let rola = "";
             for (let i = 0; i < radios.length; i++) {
@@ -50,7 +50,6 @@
                     break;
                 }
             }
-
             let wynikTekst = `Imię: ${imie}
 Nazwisko: ${nazwisko}
 Wybrane wydarzenie: ${selectElement}
